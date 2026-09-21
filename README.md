@@ -41,6 +41,8 @@
       --ink-500: #5a6b62;
       --ink-300: #93a39a;
       --white: #ffffff;
+      --whatsapp: #25D366;
+      --whatsapp-dark: #128C7E;
       --shadow-sm: 0 1px 3px rgba(15, 21, 18, 0.04);
       --shadow-md: 0 8px 24px -6px rgba(15, 21, 18, 0.08);
       --shadow-lg: 0 24px 48px -12px rgba(15, 21, 18, 0.12);
@@ -173,7 +175,7 @@
     }
 
     .btn-header {
-      background: var(--emerald-600);
+      background: var(--whatsapp);
       color: var(--white);
       padding: 11px 26px;
       border-radius: var(--radius-full);
@@ -181,16 +183,23 @@
       font-size: 0.9rem;
       text-decoration: none;
       transition: all var(--transition);
-      box-shadow: 0 4px 14px -4px rgba(13, 122, 69, 0.35);
+      box-shadow: 0 4px 14px -4px rgba(37, 211, 102, 0.4);
       border: none;
       cursor: pointer;
       white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .btn-header:hover {
-      background: var(--emerald-700);
+      background: var(--whatsapp-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 22px -6px rgba(13, 122, 69, 0.45);
+      box-shadow: 0 8px 22px -6px rgba(37, 211, 102, 0.5);
+    }
+
+    .btn-header i {
+      font-size: 1rem;
     }
 
     .menu-toggle {
@@ -315,7 +324,7 @@
     }
 
     .btn-primary {
-      background: var(--emerald-600);
+      background: var(--whatsapp);
       color: var(--white);
       padding: 17px 40px;
       border-radius: var(--radius-full);
@@ -324,7 +333,7 @@
       border: none;
       cursor: pointer;
       transition: all var(--transition);
-      box-shadow: 0 10px 28px -8px rgba(13, 122, 69, 0.5);
+      box-shadow: 0 10px 28px -8px rgba(37, 211, 102, 0.5);
       display: inline-flex;
       align-items: center;
       gap: 10px;
@@ -334,9 +343,9 @@
     }
 
     .btn-primary:hover {
-      background: var(--emerald-700);
+      background: var(--whatsapp-dark);
       transform: translateY(-3px);
-      box-shadow: 0 18px 36px -10px rgba(13, 122, 69, 0.55);
+      box-shadow: 0 18px 36px -10px rgba(37, 211, 102, 0.6);
     }
 
     .btn-primary i {
@@ -671,13 +680,15 @@
       text-align: center;
       transition: all var(--transition);
       cursor: default;
+      text-decoration: none;
+      display: block;
     }
 
     .service-item:hover {
-      background: var(--emerald-600);
-      border-color: var(--emerald-500);
+      background: var(--whatsapp);
+      border-color: var(--whatsapp);
       transform: translateY(-6px);
-      box-shadow: 0 20px 40px -12px rgba(13, 122, 69, 0.5);
+      box-shadow: 0 20px 40px -12px rgba(37, 211, 102, 0.5);
     }
 
     .service-icon {
@@ -695,7 +706,7 @@
     }
 
     .service-item:hover .service-icon {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.2);
       color: var(--white);
       transform: scale(1.1);
     }
@@ -716,7 +727,7 @@
     }
 
     .service-item:hover p {
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255, 255, 255, 0.95);
     }
 
     /* ---------- TESTIMONIAL ---------- */
@@ -874,9 +885,9 @@
       max-width: 480px;
     }
 
-    .btn-gold {
+    .btn-whatsapp {
       background: var(--white);
-      color: var(--emerald-700);
+      color: var(--whatsapp-dark);
       padding: 18px 44px;
       border-radius: var(--radius-full);
       font-weight: 700;
@@ -885,7 +896,7 @@
       transition: all var(--transition);
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       white-space: nowrap;
       position: relative;
       z-index: 1;
@@ -893,14 +904,82 @@
       font-family: 'Inter', sans-serif;
     }
 
-    .btn-gold:hover {
+    .btn-whatsapp:hover {
       transform: translateY(-3px) scale(1.02);
       box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.35);
-      background: var(--sand-50);
+      background: var(--whatsapp);
+      color: var(--white);
     }
 
-    .btn-gold i {
-      color: var(--emerald-600);
+    .btn-whatsapp i {
+      font-size: 1.3rem;
+      transition: transform var(--transition);
+    }
+
+    .btn-whatsapp:hover i {
+      transform: rotate(-10deg) scale(1.1);
+    }
+
+    /* ---------- WHATSAPP FLUTUANTE ---------- */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 60px;
+      height: 60px;
+      background: var(--whatsapp);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 8px 24px -4px rgba(37, 211, 102, 0.5);
+      z-index: 999;
+      text-decoration: none;
+      transition: all var(--transition);
+      animation: whatsappPulse 2.5s infinite;
+    }
+
+    .whatsapp-float:hover {
+      background: var(--whatsapp-dark);
+      transform: scale(1.1) rotate(-6deg);
+      box-shadow: 0 12px 32px -4px rgba(37, 211, 102, 0.7);
+    }
+
+    @keyframes whatsappPulse {
+      0%, 100% { box-shadow: 0 8px 24px -4px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      50% { box-shadow: 0 8px 24px -4px rgba(37, 211, 102, 0.5), 0 0 0 16px rgba(37, 211, 102, 0); }
+    }
+
+    .whatsapp-float .tooltip {
+      position: absolute;
+      right: 72px;
+      background: var(--ink-900);
+      color: var(--white);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .whatsapp-float .tooltip::after {
+      content: '';
+      position: absolute;
+      right: -6px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-left-color: var(--ink-900);
+    }
+
+    .whatsapp-float:hover .tooltip {
+      opacity: 1;
     }
 
     /* ---------- FOOTER ---------- */
@@ -964,8 +1043,8 @@
     }
 
     .social-icons a:hover {
-      background: var(--emerald-600);
-      border-color: var(--emerald-600);
+      background: var(--whatsapp);
+      border-color: var(--whatsapp);
       color: var(--white);
       transform: translateY(-3px);
     }
@@ -1020,6 +1099,16 @@
       margin-top: 4px;
       flex-shrink: 0;
       font-size: 0.9rem;
+    }
+
+    .footer-contact a {
+      color: var(--ink-300);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .footer-contact a:hover {
+      color: var(--whatsapp);
     }
 
     .footer-bottom {
@@ -1087,7 +1176,7 @@
 
       .nav-links .btn-header {
         width: 100%;
-        text-align: center;
+        justify-content: center;
         margin-top: 8px;
       }
 
@@ -1191,7 +1280,7 @@
         padding: 48px 24px;
       }
 
-      .btn-gold {
+      .btn-whatsapp {
         padding: 16px 32px;
         font-size: 0.95rem;
       }
@@ -1222,6 +1311,18 @@
       .footer-bottom {
         flex-direction: column;
         text-align: center;
+      }
+
+      .whatsapp-float {
+        width: 54px;
+        height: 54px;
+        font-size: 1.6rem;
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .whatsapp-float .tooltip {
+        display: none;
       }
     }
 
@@ -1254,7 +1355,9 @@
         <a href="#servicos">Serviços</a>
         <a href="#sobre">Sobre</a>
         <a href="#contato">Contato</a>
-        <a href="#agendar" class="btn-header">Agendar</a>
+        <a href="https://wa.me/5534992615849?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20%C3%89clat%20Salon." target="_blank" rel="noopener" class="btn-header">
+          <i class="fab fa-whatsapp"></i> Agendar
+        </a>
       </nav>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
         <i class="fas fa-bars"></i>
@@ -1274,8 +1377,9 @@
           <h1>Realce sua <i>beleza</i> natural com um toque de sofisticação</h1>
           <p>No Éclat Salon, cada detalhe é pensado para proporcionar uma experiência única. Cabelos, unhas, maquiagem e bem-estar em um só lugar.</p>
           <div class="hero-actions">
-            <a href="#agendar" class="btn-primary">
-              Agende seu horário
+            <a href="https://wa.me/5534992615849?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20%C3%89clat%20Salon." target="_blank" rel="noopener" class="btn-primary">
+              <i class="fab fa-whatsapp"></i>
+              Agende pelo WhatsApp
               <i class="fas fa-arrow-right"></i>
             </a>
           </div>
@@ -1306,10 +1410,10 @@
             </div>
           </div>
           <div class="floating-card card-2">
-            <div class="floating-icon"><i class="fas fa-calendar-check"></i></div>
+            <div class="floating-icon"><i class="fab fa-whatsapp"></i></div>
             <div>
               <strong>Agendamento fácil</strong>
-              <small>Online e presencial</small>
+              <small>Direto no WhatsApp</small>
             </div>
           </div>
         </div>
@@ -1366,29 +1470,29 @@
         <div class="section-head">
           <div class="section-label">Nossos serviços</div>
           <h2 class="section-title">Cuidados <i>completos</i> para você</h2>
-          <p>Do cabelo às unhas, oferecemos tudo o que você precisa para se sentir ainda mais bonita.</p>
+          <p>Clique em um serviço e agende diretamente pelo WhatsApp.</p>
         </div>
         <div class="services-grid">
-          <div class="service-item">
+          <a href="https://wa.me/5534992615849?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20CABELO%20no%20%C3%89clat%20Salon." target="_blank" rel="noopener" class="service-item">
             <div class="service-icon"><i class="fas fa-cut"></i></div>
             <h4>Cabelo</h4>
             <p>Cortes, coloração, tratamentos e penteados</p>
-          </div>
-          <div class="service-item">
+          </a>
+          <a href="https://wa.me/5534992615849?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20UNHAS%20no%20%C3%89clat%20Salon." target="_blank" rel="noopener" class="service-item">
             <div class="service-icon"><i class="fas fa-hand-sparkles"></i></div>
             <h4>Unhas</h4>
             <p>Manicure, pedicure, nail art e alongamentos</p>
-          </div>
-          <div class="service-item">
+          </a>
+          <a href="https://wa.me/5534992615849?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20MAQUIAGEM%20no%20%C3%89clat%20Salon." target="_blank" rel="noopener" class="service-item">
             <div class="service-icon"><i class="fas fa-eye"></i></div>
             <h4>Maquiagem</h4>
             <p>Social, noiva, editorial e automaquiagem</p>
-          </div>
-          <div class="service-item">
+          </a>
+          <a href="https://wa.me/5534992615849?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20EST%C3%89TICA%20no%20%C3%89clat%20Salon." target="_blank" rel="noopener" class="service-item">
             <div class="service-icon"><i class="fas fa-spa"></i></div>
             <h4>Estética</h4>
             <p>Limpeza de pele, massagens e bem-estar</p>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -1419,11 +1523,11 @@
         <div class="cta-box">
           <div class="cta-text">
             <h2>Pronta para <i>brilhar</i>?</h2>
-            <p>Agende seu horário e descubra o poder de um atendimento personalizado e exclusivo.</p>
+            <p>Agende seu horário pelo WhatsApp e descubra o poder de um atendimento personalizado e exclusivo.</p>
           </div>
-          <a href="#" class="btn-gold">
-            Agendar agora
-            <i class="fas fa-calendar-check"></i>
+          <a href="https://wa.me/5534992615849?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20%C3%89clat%20Salon." target="_blank" rel="noopener" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            Agendar pelo WhatsApp
           </a>
         </div>
       </div>
@@ -1440,7 +1544,7 @@
           <div class="social-icons">
             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/5534992615849" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
           </div>
         </div>
@@ -1456,16 +1560,16 @@
         <div class="footer-col">
           <h4>Serviços</h4>
           <ul>
-            <li><a href="#servicos">Cabelo</a></li>
-            <li><a href="#servicos">Unhas</a></li>
-            <li><a href="#servicos">Maquiagem</a></li>
-            <li><a href="#servicos">Estética</a></li>
+            <li><a href="https://wa.me/5534992615849?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20CABELO%20no%20%C3%89clat%20Salon." target="_blank" rel="noopener">Cabelo</a></li>
+            <li><a href="https://wa.me/5534992615849?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20UNHAS%20no%20%C3%89clat%20Salon." target="_blank" rel="noopener">Unhas</a></li>
+            <li><a href="https://wa.me/5534992615849?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20MAQUIAGEM%20no%20%C3%89clat%20Salon." target="_blank" rel="noopener">Maquiagem</a></li>
+            <li><a href="https://wa.me/5534992615849?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20EST%C3%89TICA%20no%20%C3%89clat%20Salon." target="_blank" rel="noopener">Estética</a></li>
           </ul>
         </div>
         <div class="footer-contact">
           <h4>Contato</h4>
           <p><i class="fas fa-map-marker-alt"></i> Rua das Flores, 123 – Jardins, SP</p>
-          <p><i class="fas fa-phone-alt"></i> (11) 98765-4321</p>
+          <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5534992615849" target="_blank" rel="noopener">(34)99261-5849</a></p>
           <p><i class="fas fa-envelope"></i> contato@eclatsalon.com</p>
           <p><i class="fas fa-clock"></i> Ter–Sáb: 10h às 20h</p>
         </div>
@@ -1476,6 +1580,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/5534992615849?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20%C3%89clat%20Salon." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="tooltip">Agende pelo WhatsApp</span>
+  </a>
 
   <script>
     // Header scrolled state
